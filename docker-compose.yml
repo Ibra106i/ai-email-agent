@@ -10,6 +10,7 @@ services:
     environment:
       - N8N_SECURE_COOKIE=false
       - GENERIC_TIMEZONE=UTC
+      - LITELLM_API_KEY=${LITELLM_API_KEY}
     env_file:
       - .env
 
