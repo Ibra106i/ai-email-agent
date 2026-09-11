@@ -1,0 +1,28 @@
+model_list:
+  # PRIMARY: Groq (free tier, fast)
+  - model_name: email-agent
+    litellm_params:
+      model: groq/llama-3.3-70b-versatile
+      api_key: os.environ/GROQ_API_KEY
+
+  # FALLBACK 1: Mistral
+  - model_name: email-agent
+    litellm_params:
+      model: mistral/mistral-small-latest
+      api_key: os.environ/MISTRAL_API_KEY
+
+  # FALLBACK 2: OpenRouter (100+ models)
+  - model_name: email-agent
+    litellm_params:
+      model: openrouter/meta-llama/llama-3.3-70b-instruct
+      api_key: os.environ/OPENROUTER_API_KEY
+
+litellm_settings:
+  fallbacks: [["email-agent-fallback"]]
+  num_retries: 2
+  request_timeout: 30
+
+router_settings:
+  routing_strategy: simple-shuffle
+  num_retries: 2
+  timeout: 30
