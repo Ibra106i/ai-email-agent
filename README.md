@@ -17,7 +17,7 @@ Gmail (unread) → n8n Workflow → LiteLLM Gateway → Groq/Mistral/OpenRouter
 ### 1. Clone & configure
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ai-email-agent.git
+git clone https://github.com/Ibra106i/ai-email-agent.git
 cd ai-email-agent
 cp .env.example .env
 ```
